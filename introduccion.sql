@@ -1,0 +1,60 @@
+--CREAR UNA BASE DE DATOS
+
+--Siempre los comandos de SQL deben estar en mayusculas 
+
+CREATE DATABASE cliente;
+
+--Crear una tabla 
+
+CREATE TABLE clientes( 
+    id INT(10) NOT NULL AUTO INCREMENT,
+    ci INT(7)  NOT NULL ,
+    nombre VARCHAR(50) NOT NULL,
+    PRIMARY KEY(id)
+);
+
+--PARA VER LA ESTRUCTURA DE LA TABLA SE UTILIZA EL SIGUIENTE COMANDO COMMENT
+
+DESCRIBE clientes;
+
+--PARA INGRESAR EL SIGUIENTE PARAMATRO EN LA TABLA SE UTILIZA EL SIGUIENTE CODIGO COMMENT
+
+ALTER TABLE clientes ADD descripcion VARCHAR(60) NOT NULL;
+
+--PARA CAMBIAR DE NOMBRE A UNA ESTRUCTURA A UNA FILA SE PUEDE HACER PERO NO SE PUEDE MODIFICAR EL TIPO DE DATO PERO SI PUEDO CAMBIAR SU EXTENSIÓN DE 20 A 50 
+
+
+ALTER TABLE servicios CHANGE descripcion nuevoNombre VARCHAR(50) NOT NULL;
+--OPERACIONES CRUD 
+
+--CREAR O INSERTAR DATOS EN UNA TABLA COMMENT
+
+INSERT INTO clientes(ci, nombre) VALUES( 138494345,"Jefferson Alquinga");
+
+INSERT INTO clientes(ci,nombre)VALUES(14532346456,"Bernarod Alquinga"),( 345232412351435,"Jose Alquinga");
+
+
+
+--READ O LEER LOS DATOS DE UNA TABLA COMME
+
+SELECT * FROM cliente;
+
+--Leer datos por un solo id
+
+SELECT * FROM cliente WHERE id = 1;
+SELECT* FROM cliente ORDER BY id DESC;
+
+SELECT*FROM cliente ORDER BY id ASC LIMIT 4;
+
+
+SELECT*FROM cliente WHERE id = 2;
+
+SELECT*FROM cliente WHERE nombre = "Jefferson Alquinga";
+
+
+
+--UPDATE O ACTUALIZAR DATOS DE UNA TABLA
+
+UPDATE clientes SET nombre ="Jefferson Chuquimarca" , ci = 143453462345, WHERE id = 2;
+
+--
