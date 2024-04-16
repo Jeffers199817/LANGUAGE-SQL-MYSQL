@@ -116,3 +116,9 @@ CREATE TABLE citas (
     FOREIGN KEY(clienteId)
     REFERENCES clientes(id)
 );
+
+--FINALMENTE REALIZRE LA UNION CON JOIN 
+mysql> SELECT*FROM citasServicios
+    -> LEFT JOIN citas ON citas.id=citasServicios.citaId
+    -> LEFT JOIN clientes ON citas.clienteId = clientes.id
+    -> LEFT JOIN servicios ON servicios.id = citasServicios.Id;
